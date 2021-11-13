@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
 
 INSTALL_BIN=/opt/onprem-k8s-tools/bin
+OS=`uname`
+OS_ARCH=`uname -m`
+if [ "$OS_ARCH" == "x86_64" ]; then
+    OS_ARCH="amd64"
+fi
+
 mkdir -pv $INSTALL_BIN
 if [ -d ./shell ]; then
     cp -v shell/* $INSTALL_BIN
 fi
 
 if [ -d ./tools ]; then
-    cp -v tools/* $INSTALL_BIN
+    cp -v tools/*.$OS_ARCH.$OS $INSTALL_BIN
 fi
 chmod -v a+x $INSTALL_BIN/*
 

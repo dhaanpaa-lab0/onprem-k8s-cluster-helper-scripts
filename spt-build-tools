@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+MAKEFILES=`ls -R src/*/Makefile`
+
+
+for i in `echo $MAKEFILES`
+do
+    SRC_DIR=`dirname $i`
+    echo "Directory .............. : $SRC_DIR"
+    cd $SRC_DIR
+    make
+done
