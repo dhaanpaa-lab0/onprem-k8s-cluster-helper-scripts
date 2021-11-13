@@ -138,4 +138,6 @@ tags
 !.vscode/*.code-snippets
 
 # End of https://www.toptal.com/developers/gitignore/api/goland,vim,visualstudiocode,rust
-n
+
+src/k8s-set-configuration/k8s-set-configuration
+

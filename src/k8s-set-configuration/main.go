@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main()  {
-	fmt.Println("Hello There!!!")
+	var homeDir, _ = os.UserHomeDir()
+	fmt.Println("Home:" +homeDir)
+
 }
