@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+if [ -f /usr/bin/dnf ]; then
+    dnf -y install podman buildah skopeo
+fi
+
+if [ -f /usr/bin/apt ]; then
+    apt-get -y update
+    apt-get -y install podman buildah skopeo
+fi
+
+if [ -f /usr/bin/osascript ]; then
+    brew install podman
+fi

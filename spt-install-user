@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-
 INSTALL_BIN=$HOME/bin
 mkdir -pv $INSTALL_BIN
-cp -v cnt-* $INSTALL_BIN
-cp -v dkr-* $INSTALL_BIN
-cp -v pdm-* $INSTALL_BIN
+if [ -d ./shell ]; then
+    cp -v shell/* $INSTALL_BIN
+fi
+
+if [ -d ./tools ]; then
+    cp -v tools/* $INSTALL_BIN
+fi
 chmod -v a+x $INSTALL_BIN/*
