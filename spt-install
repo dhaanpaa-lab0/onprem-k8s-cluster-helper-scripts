@@ -13,7 +13,15 @@ if [ -d ./shell ]; then
 fi
 
 if [ -d ./tools ]; then
-    cp -v tools/*.$OS_ARCH.$OS $INSTALL_BIN
+    TOOLS_LIST=`ls -R tools/*.$OS_ARCH.$OS`
+    for i in `echo $TOOLS_LIST`
+    do
+        TOOL_FILE=`echo $i | sed -e "s/\.$OS_ARCH\.$OS//g"`
+        TOOL=`basename $TOOL_FILE`
+        echo "copying TOOL: $TOOL"
+        cp -v $i $INSTALL_BIN/$TOOL
+    done
+    
 fi
 chmod -v a+x $INSTALL_BIN/*
 
