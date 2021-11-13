@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+INSTALL_BIN=/opt/containerhelper/bin
+mkdir -pv $INSTALL_BIN
+cp -v cnt-* $INSTALL_BIN
+cp -v dkr-* $INSTALL_BIN
+cp -v pdm-* $INSTALL_BIN
+chmod -v a+x $INSTALL_BIN/*
+
+if [ ! -f /etc/profile.d/containerhelper-sysinstall.sh ]; then
+    cat << PROFILE_SET > /etc/profile.d/containerhelper-sysinstall.sh
+#!/usr/bin/env bash
+PATH=\$PATH:$INSTALL_BIN
+export PATH
+PROFILE_SET
+    chmod a+x /etc/profile.d/containerhelper-sysinstall.sh
+fi

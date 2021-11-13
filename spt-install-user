@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+INSTALL_BIN=$HOME/bin
+mkdir -pv $INSTALL_BIN
+cp -v cnt-* $INSTALL_BIN
+cp -v dkr-* $INSTALL_BIN
+cp -v pdm-* $INSTALL_BIN
+chmod -v a+x $INSTALL_BIN/*
