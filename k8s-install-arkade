@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+curl -sLS https://dl.get-arkade.dev | sudo sh
+

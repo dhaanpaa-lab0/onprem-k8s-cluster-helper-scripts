@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+K3S_UNINSTALL_SCRIPT=/usr/local/bin/k3s-uninstall.sh
+K3S_UNINSTALL_AGENT=/usr/local/bin/k3s-agent-uninstall.sh
+
+if [ -f $K3S_UNINSTALL_SCRIPT ]; then
+  sudo $K3S_UNINSTALL_SCRIPT
+fi
+
+if [ -f $K3S_UNINSTALL_AGENT ]; then
+  sudo $K3S_UNINSTALL_AGENT
+fi
