@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+KUBE_DIR=$HOME/.kube
+mkdir -pv $KUBE_DIR
+vim $KUBE_DIR/k8s-set-config.txt
+
